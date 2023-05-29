@@ -9,6 +9,7 @@ const MeuInput = (props) => {
             <TextInput
             style={style.input}
              placeholder={props.placeHolder}
+             secureTextEntry={props.comMascara}
             ></TextInput>
         </SafeAreaView>
     );
