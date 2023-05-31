@@ -6,10 +6,20 @@ import SuperButton from "../../components/SuperButton";
 import { Container , MeuText } from "../../styles/style-geral";
 
 // Todo componente no react native é um função ou uma classe
-function Login (){
+function Login ({navigation}){
 
     const logar = () =>{
-        Alert.alert("Aqui vou logar no sistema");
+        // 1° Obter email e senha e verificar se foram informados
+            // 1.1 se não tiver, mandar mensagem ao usuario
+        // 2° Verificar se esses dados existe na api, no backend.
+
+        // é aqui que vou tentar autenticar o usuario e fazer ele ir para as proximas telas.
+
+        let email = "fulano@gmail.com";
+
+        // Navegando para a pagina de Home passando parametros
+        navigation.navigate('Home',{email, doritos: "Gosto muito!!!!!"});
+
     }
 
     // const salvar = () =>{
