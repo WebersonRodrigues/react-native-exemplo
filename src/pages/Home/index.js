@@ -1,5 +1,5 @@
 import React from "react";
-import { Text, FlatList } from "react-native";
+import { Text, FlatList, Image } from "react-native";
 import { useEffect, useState } from "react";
 
 import { Container } from "../../styles/style-geral";
@@ -7,8 +7,13 @@ import {
     ContainerPrincipal,
     FlatListProdutos,
     ItemProduto,
-    TouchProduto
+    TouchProduto,
+    MinhaImagem
   } from "./styles";
+
+// import imagemBunequinho from "../../assets/male.jpg" ;
+// const imgURI = Image.resolveAssetSource(imagemBunequinho).uri;
+
 
 
 export default function Home({route}){
@@ -48,6 +53,10 @@ export default function Home({route}){
             <Text>{route.params.doritos}</Text> */}
 
             {/* Hoje vamos aprender a utilziar o flatlist */}
+
+            <MinhaImagem source={require("../../assets/male.jpg")}></MinhaImagem>
+
+            {/* <MinhaImagem source={{uri: imgURI}}></MinhaImagem> */}
 
             <FlatListProdutos 
                 data={produtos}

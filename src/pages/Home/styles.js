@@ -22,9 +22,16 @@ const TouchProduto = styled.TouchableOpacity`
     text-align: center;
 `;
 
+const MinhaImagem = styled.Image`
+width: 200px;
+height:250px;
+`;
+
+
 export {
     ContainerPrincipal,
     FlatListProdutos,
     ItemProduto,
-    TouchProduto
+    TouchProduto,
+    MinhaImagem
 }
