@@ -54,7 +54,7 @@ export default function Home({route}){
 
             {/* Hoje vamos aprender a utilziar o flatlist */}
 
-            <MinhaImagem source={require("../../assets/male.jpg")}></MinhaImagem>
+            <MinhaImagem onPress  source={require("../../assets/male.jpg")}></MinhaImagem>
 
             {/* <MinhaImagem source={{uri: imgURI}}></MinhaImagem> */}
 

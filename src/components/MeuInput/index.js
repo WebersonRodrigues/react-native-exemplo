@@ -1,5 +1,5 @@
 import React from "react";
-import {SafeAreaView, TextInput, StyleSheet, Text} from 'react-native'
+import {SafeAreaView, TextInput, StyleSheet, Text, Alert} from 'react-native'
 
 const MeuInput = (props) => {
 
@@ -10,6 +10,7 @@ const MeuInput = (props) => {
             style={style.input}
              placeholder={props.placeHolder}
              secureTextEntry={props.comMascara}
+             onChangeText={valor => props.setValor(valor)}
             ></TextInput>
         </SafeAreaView>
     );

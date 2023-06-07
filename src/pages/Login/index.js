@@ -1,24 +1,45 @@
-import React from "react";
+import React, { useState } from "react";
 import {Text, StyleSheet, View, Alert} from "react-native" 
 import MeuInput from "../../components/MeuInput";
 import SuperButton from "../../components/SuperButton";
 
 import { Container , MeuText } from "../../styles/style-geral";
 
+// Dados corretos... 
+const usuario = {
+    email: "admin@admin",
+    senha: "123"
+}
+
 // Todo componente no react native é um função ou uma classe
 function Login ({navigation}){
 
+    const [email, setEmail] = useState("");
+    const [senha, setSenha] = useState("");
+
     const logar = () =>{
+
+        if(!email || !senha){
+            Alert.alert(`O e-mail e senha devem ser preenchidos.`);
+
+        }else if(email !== usuario.email || senha !== usuario.senha){
+            Alert.alert(`O e-mail ou a senha estão incorretos.`); 
+        }
+        else{
+            navigation.navigate('Home');
+        }
+
+
         // 1° Obter email e senha e verificar se foram informados
             // 1.1 se não tiver, mandar mensagem ao usuario
         // 2° Verificar se esses dados existe na api, no backend.
 
         // é aqui que vou tentar autenticar o usuario e fazer ele ir para as proximas telas.
 
-        let email = "fulano@gmail.com";
+        // let email = "fulano@gmail.com";
 
         // Navegando para a pagina de Home passando parametros
-        navigation.navigate('Home',{email, doritos: "Gosto muito!!!!!"});
+        // navigation.navigate('Home',{email, doritos: "Gosto muito!!!!!"});
 
     }
 
@@ -38,12 +59,14 @@ function Login ({navigation}){
                 label="E-mail"
                 placeHolder="exemplo@exemplo.com"
                 comMascara={false}
+                setValor= {setEmail}
             ></MeuInput>
 
             <MeuInput 
                 label="Senha"
                 placeHolder="123456"
                 comMascara={true}
+                setValor= {setSenha}
             ></MeuInput>
 
             <View style={style.boxRecuperarSenha}>
